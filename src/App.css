@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: #000;
+    padding-bottom: 50px;
+}  
+.navBar {
+    background-color: #d8232a;
+}
+.search {
+    height: 100px;
+    padding-top: 50px;
+    margin-bottom: 50px;
+  }
+  
+  input[type='text'] {
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    width: 60%;
+    margin: auto;
+  }
+  
+.gridCard {
+  margin-bottom: 50px;
+}  
+.card {
+  transform:scale(1);
+  transition: all 0.5s ease-in;  
+} 
+
+.card:hover {
+  transform:scale(1.06);
+  transition: all 0.5s ease-in;
+}
+
+.footer {
+  margin-top: 0px;
+  padding: 25px;
+}
+.copy {
+  margin-top: 15px;
+}
