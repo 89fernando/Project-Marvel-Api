@@ -18,32 +18,34 @@ const CharacterTable = ({items,isLoading}) => {
             return <Grid item key={item.id} xs={12} sm={6} md={4}>
               <Card
                 className='card'
-                sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}
+                sx={{ height: '510px', display: 'flex', flexDirection: 'column'}}
               >
-                {(item.thumbnail.path) !== "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"          
-                ?
-                <CardMedia
-                  component="img"
-                    sx={{
-                      // 16:9
-                      height: '300px'
-                    }}
+                  {(item.thumbnail.path) !== "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"          
+                  ?
+                  <CardMedia
+                    className='cardMedia'
+                    component="img"
+                      sx={{
+                        // 16:9
+                        height: '250px'
+                      }}
 
-                  image={item.thumbnail.path + "." + item.thumbnail.extension }
-                  alt="random"
-                />
-                : <img src={download} alt={"spider-man"} style={{height: '300px'}}/>
-                  }
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center"}}>
-                    {item.name}
-                  </Typography>
-                  <Typography style={{textAlign:"justify"}}>
-                    {(item.description.length) > 1 
-                      ? item.description
-                      : <div style={{textAlign:"center", marginTop: "35px"}}>Não possui descrição.</div>}
-                  </Typography>
-                </CardContent>
+                    image={item.thumbnail.path + "." + item.thumbnail.extension }
+                    alt="random"
+                  />
+                  : <img src={download} alt={"spider-man"} style={{height: '300px'}}/>
+                    }
+                  <CardContent sx={{ flexGrow: 1 }}>
+                    <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center"}}>
+                      {item.name}
+                    </Typography>
+                    <Typography style={{textAlign:"justify"}}>
+                      {(item.description.length) > 1 
+                        ? item.description
+                        : <div style={{textAlign:"center", marginTop: "35px"}}>Não possui descrição.</div>}
+                    </Typography>
+                  </CardContent>
+
               </Card>
             </Grid>
           })}
