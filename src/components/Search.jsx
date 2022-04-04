@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 
-
 const Search = ({search}) => {
     const[text,setText] = useState('')
 

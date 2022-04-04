@@ -41,18 +41,47 @@
   transition: all 0.3s;
 } 
 
-.card:hover {
+.card:hover{
   border: 5px solid #d8232a;
   border-radius: 1%;
   
   -moz-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+
 }
 
+.card:hover .divButton {
+  display: block;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  height: 27px;
+}
 .cardMedia:hover {
   transform: rotateY(180deg);
   filter:contrast(120%)
+}
+.divButton {
+  display: none;
+}
+.button {
+  width: 100%;
+  margin-top: 5px;
+  height: 27px;
+}
+
+.btnReset {
+  text-align: center;
+  width: 100px;
+  height: 38px;
+  cursor: pointer;
+  align-items: center;
+}
+.buttonReset {
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .footer {

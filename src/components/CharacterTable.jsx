@@ -9,6 +9,15 @@ import Container from '@mui/material/Container';
 import download from '../Images/download.png';
 
 const CharacterTable = ({items,isLoading}) => {
+
+  const favorite = (item)=>{
+    // getting the previous element and adding the new favorite item
+    var previousData = JSON.parse(localStorage.getItem('favorites'))
+    previousData.push(item)
+    localStorage.setItem('favorites',JSON.stringify(previousData))
+  }
+
+
     return isLoading ? <h1>Loading</h1> :
     <div className="gridCard">
       <Container lg={{ py: 8 }} maxWidth="lg"> 
@@ -33,17 +42,21 @@ const CharacterTable = ({items,isLoading}) => {
                     image={item.thumbnail.path + "." + item.thumbnail.extension }
                     alt="random"
                   />
-                  : <img src={download} alt={"spider-man"} style={{height: '300px'}}/>
+                  : <img src={download} alt={"heroes"} style={{height: '250px'}}/>
                     }
-                  <CardContent sx={{ flexGrow: 1 }}>
+                  <div className="divButton">
+                    <button className="button" type="button" onClick={()=>favorite(item)}>Favorite</button>
+                  </div>
+                  <CardContent sx={{ flexGrow: 1 }} style={{}}>
                     <Typography gutterBottom variant="h5" component="h2" style={{textAlign:"center"}}>
                       {item.name}
                     </Typography>
-                    <Typography style={{textAlign:"justify"}}>
+                    <Typography style={{textAlign:"justify", fontSize:"15px", textOverflow:"ellipsis"}}>
                       {(item.description.length) > 1 
                         ? item.description
                         : <div style={{textAlign:"center", marginTop: "35px"}}>Não possui descrição.</div>}
                     </Typography>
+                    
                   </CardContent>
 
               </Card>
